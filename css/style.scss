@@ -1,0 +1,344 @@
+@import "_fonts";
+@import "_color";
+@import "_animation";
+
+body {
+  background-color: $background;
+  color: $text;
+  font-family: 'Raleway', sans-serif;
+
+  h1 {
+    color: $main-light;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
+
+    &.text {
+      color: $text;
+    }
+  }
+
+  h2 {
+    font-size: 3em;
+    letter-spacing: 1em;
+  }
+
+  h3 {
+    font-size: 2em;
+  }
+
+  .small {
+    font-size: 0.8em;
+  }
+
+  .link, a{
+    color: $text;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $text;
+    text-decoration: underline;
+  }
+  ul {
+    list-style: circle;
+  }
+  .debug {
+    border: 1px dashed orangered;
+  }
+
+  .center {
+    text-align: center;
+  }
+  .align-right {
+    text-align: right;
+  }
+  .align-left {
+    text-align: left;
+  }
+  .headline {
+    position: relative;
+    text-align: center;
+  }
+  .logo {
+    width: 50px;
+    margin-left: 2em;
+  }
+
+
+  .half-left img,
+  .half-right img {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+
+  @media (min-width: 481px) {
+    .half-left,
+    .half-right {
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+    }
+
+    .half-left>.container,
+    .half-right>.container {
+      top: 0;
+    }
+
+    .half-left>.container {
+      right: 0;
+    }
+
+    .half-right>.container {
+      left: 0;
+    }
+  }
+
+//CONTENT
+  #welcome {
+    position: relative;
+    background-color: $main-color;
+    margin-top: 10em;
+  }
+
+  #experience {
+    background-color: $main-light;
+
+    #skillsHeadline {
+      color: $text;
+    }
+  }
+
+  .icon {
+    font-size: 2em;
+    transition-duration: .4s;
+
+    &:hover {
+      transition-duration: .4s;
+    }
+
+    @media (max-width: 600px) {
+      //width: 20% !important;
+      &:before {
+        margin: 5px;
+      }
+    }
+  }
+
+  #responsive {
+    background-color: $text;
+    color: $text-opposite;
+    font-size: 1.5em;
+
+    #resIcon {
+      width: 10em;
+      height: 10em;
+    }
+  }
+
+  #portfolio {
+    padding-top: 5em !important;
+    padding-bottom: 5em !important;
+    .wrapper {
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      &.shrink img {
+        transition: .8s ease;
+      }
+
+      &.shrink img:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        transition: .8s ease;
+      }
+
+    }
+  }
+
+  #skills {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+//Deals
+  #deals {
+    padding-top: 5em !important;
+    padding-bottom: 5em !important;
+    background-color: $main-light;
+    color: $text;
+
+    h1 {
+      color: $main-dark;
+    }
+
+    a:hover {
+      color: $text-opposite;
+    }
+  }
+
+//Contact
+  #contact {
+    padding-top: 5em !important;
+    padding-bottom: 5em !important;
+    background-color: $text;
+    color: $text-opposite;
+
+    a, .link {
+      color: $text-opposite !important;
+
+      &:hover {
+        color: $main-light;
+      }
+    }
+
+    h1 {
+      color: $text-opposite;
+    }
+  }
+
+  .underline {
+    width: 20%;
+    height: 1px;
+    margin-bottom: 15px;
+
+    &.light {
+      background-color: $main-light;
+    }
+    &.text {
+      background-color: $text;
+    }
+    &.main {
+      background-color: $main-color;
+    }
+  }
+
+  .input {
+    margin: .5em;
+    padding: .8em;
+    border: 1px solid $text-opposite;
+  }
+
+  .xing {
+    font-size: 1em;
+    transition-duration: 0.3s;
+  }
+
+  /////////////////////////// v CTA
+  .cta {
+    color: $text-opposite;
+    position: relative;
+    margin: auto;
+    padding: 19px 22px;
+    transition: all 0.2s ease;
+    text-decoration: none !important;
+    top: 30px;
+    font-weight: 700;
+
+    &:hover {
+      font-size: 1em;
+    }
+  }
+  .cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 28px;
+    //background:  transparentize(orangered, 0.3);
+    background: linear-gradient(230deg, #FF7A8D 0%, #CC81B1 75%);
+    width: 56px;
+    height: 56px;
+    transition: all 0.3s ease;
+  }
+  .cta span {
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+  .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: $text-opposite;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+  }
+  .cta:hover:before {
+    width: 100%;
+    //background: transparentize(orangered, 0.3);
+    background: linear-gradient(230deg, #FF7A8D 0%, #CC81B1 75%);
+  }
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+  .cta:active {
+    transform: scale(0.96);
+  }
+  /////////////////////////// ^ CTA
+
+  .btn {
+    text-decoration: none;
+    color: $main-color;
+    border: 1px solid $main-color;
+    border-radius: 99px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    &:hover {
+      background-color: $main-color;
+      color: $text;
+    }
+  }
+
+  .myCard {
+    background-color: $text;
+    color: $text-opposite;
+    padding: 20px;
+    padding-bottom: 50px;
+  }
+}
+
+#myself {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+
+//Hovers
+.html:hover {color: $html;}
+.js:hover{color: $js;}
+.node:hover{color: $node}
+.css:hover {color: $css;}
+.sass:hover{color: $sass}
+.wordpress:hover {color: $wordpress;}
+.bootstrap:hover {color: $bootstrap;}
+.symfony:hover {color:$symfony;}
+.php:hover {color: $php;}
+.adobe:hover {color: $adobe;}
+.java:hover {color: $java;}
+.linux:hover {color: $linux;}
+
+@import "_footer";
+@import "_navbar";
+@import "_loader";
+@import "_header";
+@import "_media";
